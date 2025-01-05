@@ -11,7 +11,7 @@ const Home = () => {
           <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
             <div className="max-w-md mx-auto">
               <div>
-                <h1 className="text-3xl font-semibold text-center">Welcome ok1</h1>
+                <h1 className="text-3xl font-semibold text-center">Welcome</h1>
                 <p className="text-2xl font-medium text-center mt-2">Your login successful</p>
               </div>
             </div>

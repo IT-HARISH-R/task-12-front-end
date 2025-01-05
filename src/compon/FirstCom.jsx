@@ -11,7 +11,7 @@ const FirstCom = () => {
           <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
             <div className="max-w-md mx-auto">
               <div>
-                <h1 className="text-3xl font-semibold text-center">Welcome</h1>
+                <h1 className="text-3xl font-semibold text-center">Welcome ok</h1>
               </div>
             </div>
             <div className="w-full flex justify-start mt-10">
