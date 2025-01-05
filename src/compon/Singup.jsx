@@ -15,7 +15,7 @@ const Signup = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:3000/auth/sing', {
+        axios.post('https://password-reset-dutq.onrender.com/auth/sing', {
             username,
             email,
             password

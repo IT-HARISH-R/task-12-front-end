@@ -5,6 +5,7 @@ import ResetPassword from "./compon/ResetPassword"
 import Home from "./compon/Home"
 import FirstCom from "./compon/FirstCom"
 import ForgotPassword from "./compon/ForgotPassword"
+import ErrorPage from "./compon/ErrorPage"
 
 const App = () => {
   return <BrowserRouter>
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password/:token" element={<ResetPassword />} />
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   </BrowserRouter>
 

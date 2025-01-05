@@ -15,7 +15,7 @@ const ResetPassword = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        axios.post("http://127.0.0.1:3000/auth/reset-password/" + token, {
+        axios.post("https://password-reset-dutq.onrender.com/auth/reset-password/" + token, {
             password
         })
             .then(response => {

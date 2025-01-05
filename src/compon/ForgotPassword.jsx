@@ -14,7 +14,7 @@ const ForgotPassword = () => {
         setLoading(true); 
 
         axios
-            .post("http://127.0.0.1:3000/auth/Forgot-Password", { email })
+            .post("https://password-reset-dutq.onrender.com/auth/Forgot-Password", { email })
             .then((response) => {
                 setLoading(false);  
                 alert(response.data.message);
