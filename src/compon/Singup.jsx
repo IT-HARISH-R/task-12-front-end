@@ -15,7 +15,7 @@ const Signup = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://password-reset-twqc.onrender.com/auth/sing', {
+        axios.post('https://password-reset-byp3.onrender.com/auth/sing', {
             username,
             email,
             password
