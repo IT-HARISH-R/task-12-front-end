@@ -14,7 +14,7 @@ const Login = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        axios.post("https://password-reset-dutq.onrender.com/auth/login", {
+        axios.post("https://password-reset-1-w1yn.onrender.com/auth/login", {
             email,
             password
         })
