@@ -7,6 +7,7 @@ const ResetPassword = () => {
     const Navigate = useNavigate()
 
     const [password, setpasswors] = useState('');
+    const [loading, setLoading] = useState(false);
     const { token } = useParams()
     console.log(password)
     console.log(token)
@@ -14,12 +15,13 @@ const ResetPassword = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        setLoading(true); 
 
         axios.post("https://password-reset-byp3.onrender.com/auth/reset-password/" + token, {
             password
         })
             .then(response => {
-                console.log(response.data.message)
+                setLoading(false);  
                 if (response.data.status) {
                     alert(response.data.message)
                     Navigate("/login")
@@ -28,6 +30,7 @@ const ResetPassword = () => {
             })
             .catch(err => {
                 console.log("error", err)
+                setLoading(false);  
             })
 
         console.log("Form submitted");
@@ -51,13 +54,11 @@ const ResetPassword = () => {
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                     <div className="relative">
                                         <input
-                                            autoComplete="off"
                                             id="password"
                                             name="password"
                                             type="password"
                                             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Password"
-                                            aria-label="Password"
                                             required
                                             value={password}
                                             onChange={(e) => setpasswors(e.target.value)}
@@ -74,8 +75,9 @@ const ResetPassword = () => {
                                         <button
                                             type="submit"
                                             className="bg-cyan-500 text-white rounded-md px-4 py-2 hover:bg-cyan-600 focus:outline-none"
+                                            disabled={loading}
                                         >
-                                            Reset Password
+                                            {loading ? "Reset Password ..." : "Reset Password "}
                                         </button>
                                     </div>
                                 </div>

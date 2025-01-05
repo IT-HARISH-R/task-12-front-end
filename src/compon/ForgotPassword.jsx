@@ -47,13 +47,11 @@ const ForgotPassword = () => {
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                     <div className="relative">
                                         <input
-                                            autoComplete="off"
                                             id="email"
                                             name="email"
                                             type="email"
                                             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Email address"
-                                            aria-label="Email Address"
                                             required
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
@@ -69,9 +67,9 @@ const ForgotPassword = () => {
                                         <button
                                             type="submit"
                                             className="bg-cyan-500 text-white rounded-md px-4 py-2 hover:bg-cyan-600 focus:outline-none disabled:opacity-50"
-                                            disabled={loading} // Disable button when loading
+                                            disabled={loading} 
                                         >
-                                            {loading ? "Sending..." : "Send"} {/* Show loading text */}
+                                            {loading ? "Sending..." : "Send"} 
                                         </button>
                                     </div>
                                 </div>

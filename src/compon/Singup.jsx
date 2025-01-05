@@ -5,6 +5,8 @@ const Signup = () => {
     const [username, setusename] = useState('');
     const [email, setemail] = useState('');
     const [password, setpasswors] = useState('');
+    const [loading, setLoading] = useState(false);
+
 
     console.log(username)
     console.log(email)
@@ -15,6 +17,8 @@ const Signup = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
+
         axios.post('https://password-reset-byp3.onrender.com/auth/sing', {
             username,
             email,
@@ -22,6 +26,8 @@ const Signup = () => {
         })
             .then(response => {
                 alert(response.data.message)
+                setLoading(false);
+
                 if (response.data.status) {
                     Navigate("/login")
                 }
@@ -29,6 +35,7 @@ const Signup = () => {
             })
             .catch(err => {
                 console.error('Error:', err);
+                setLoading(false);
             })
 
         console.log("Form submitted");
@@ -52,13 +59,11 @@ const Signup = () => {
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                     <div className="relative">
                                         <input
-                                            autoComplete="off"
                                             id="name"
                                             name="name"
                                             type="name"
                                             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="name"
-                                            aria-label="name"
                                             required
                                             value={username}
                                             onChange={(e) => setusename(e.target.value)}
@@ -72,13 +77,11 @@ const Signup = () => {
                                     </div>
                                     <div className="relative">
                                         <input
-                                            autoComplete="off"
                                             id="email"
                                             name="email"
                                             type="email"
                                             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Email address"
-                                            aria-label="Email Address"
                                             required
                                             value={email}
                                             onChange={(e) => setemail(e.target.value)}
@@ -93,13 +96,11 @@ const Signup = () => {
                                     </div>
                                     <div className="relative">
                                         <input
-                                            autoComplete="off"
                                             id="password"
                                             name="password"
                                             type="password"
                                             className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600"
                                             placeholder="Password"
-                                            aria-label="Password"
                                             required
                                             value={password}
                                             onChange={(e) => setpasswors(e.target.value)}
@@ -116,9 +117,10 @@ const Signup = () => {
                                         <button
                                             type="submit"
                                             className="bg-cyan-500 text-white rounded-md px-4 py-2 hover:bg-cyan-600 focus:outline-none"
-                                            aria-label="Sign up"
+                                            disabled={loading}
                                         >
-                                            Sign
+                                            {loading ? " Sign..." : "Sign"}
+
                                         </button>
 
                                     </div>
