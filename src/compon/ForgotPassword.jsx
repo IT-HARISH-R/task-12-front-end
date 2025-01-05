@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom";
 const ForgotPassword = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
-    const [loading, setLoading] = useState(false); // State for loading
+    const [loading, setLoading] = useState(false); 
 
     console.log(email);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        setLoading(true); // Start loading
+        setLoading(true); 
 
         axios
             .post("http://127.0.0.1:3000/auth/Forgot-Password", { email })
             .then((response) => {
-                setLoading(false); // Stop loading
+                setLoading(false);  
                 alert(response.data.message);
                 if (response.data.status) {
                     alert('Check your email for the reset password link');
@@ -25,7 +25,7 @@ const ForgotPassword = () => {
             })
             .catch((err) => {
                 console.log(err);
-                setLoading(false); // Stop loading
+                setLoading(false);  
             });
 
         console.log("Form submitted");
