@@ -14,7 +14,7 @@ const ForgotPassword = () => {
         setLoading(true); 
 
         axios
-            .post("https://password-reset-1-w1yn.onrender.com/auth/Forgot-Password", { email })
+            .post("https://password-reset-twqc.onrender.com/auth/Forgot-Password", { email })
             .then((response) => {
                 setLoading(false);  
                 alert(response.data.message);

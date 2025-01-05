@@ -15,7 +15,7 @@ const ResetPassword = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        axios.post("https://password-reset-1-w1yn.onrender.com/auth/reset-password/" + token, {
+        axios.post("https://password-reset-twqc.onrender.com/auth/reset-password/" + token, {
             password
         })
             .then(response => {
