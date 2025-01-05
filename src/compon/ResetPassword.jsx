@@ -9,8 +9,7 @@ const ResetPassword = () => {
     const [password, setpasswors] = useState('');
     const [loading, setLoading] = useState(false);
     const { token } = useParams()
-    console.log(password)
-    console.log(token)
+
     axios.defaults.withCredentials = true;
 
     const handleFormSubmit = (e) => {
@@ -26,7 +25,6 @@ const ResetPassword = () => {
                     alert(response.data.message)
                     Navigate("/login")
                 }
-                console.log(response.data)
             })
             .catch(err => {
                 console.log("error", err)

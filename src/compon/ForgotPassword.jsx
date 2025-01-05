@@ -7,7 +7,6 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false); 
 
-    console.log(email);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -24,11 +23,11 @@ const ForgotPassword = () => {
                 }
             })
             .catch((err) => {
+                alert(err);
                 console.log(err);
                 setLoading(false);  
             });
 
-        console.log("Form submitted");
     };
 
     return (

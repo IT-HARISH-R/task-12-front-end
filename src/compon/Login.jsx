@@ -31,8 +31,6 @@ const Login = () => {
                 console.log("error", err)
                 setLoading(false);  
             })
-
-        console.log("Form submitted");
     };
 
 

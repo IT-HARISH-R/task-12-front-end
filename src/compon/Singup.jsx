@@ -8,11 +8,6 @@ const Signup = () => {
     const [loading, setLoading] = useState(false);
 
 
-    console.log(username)
-    console.log(email)
-    console.log(password)
-
-
     const Navigate = useNavigate()
 
     const handleFormSubmit = (e) => {
@@ -31,14 +26,12 @@ const Signup = () => {
                 if (response.data.status) {
                     Navigate("/login")
                 }
-                console.log('Response:', response.data);
             })
             .catch(err => {
                 console.error('Error:', err);
                 setLoading(false);
             })
 
-        console.log("Form submitted");
     };
 
 
